@@ -40,23 +40,36 @@ module StarlightHelpers
 		def valid_locale?(loc)
 			loc =~ format ? true : false
 		end
-
-		def language(loc)
-		  loc.match(format)[1]
-		end
 		
 		def country(loc)
-		  loc.match(format)[3]
+		  matchdata = loc.match(format)
+		  matchdata ? matchdata[3] : nil
 		end
 
 		def country?(loc)
-		  loc.match(format)[3] != nil
+		  matchdata = loc.match(format)
+		  if matchdata
+		    matchdata[3] ? true : false
+		  else
+		    false
+		  end
 		end
 		alias_method :full_locale?, :country?
 		
-		def only_language?(loc)
-		  !full_locale?(loc)
+		def language(loc)
+		  matchdata = loc.match(format)
+		  matchdata ? matchdata[1] : nil
 		end
+
+		def only_language?(loc)
+		  matchdata = loc.match(format)
+		  if matchdata
+		  	matchdata[3] ? false : true
+		  else
+		    false
+		  end
+		end
+		alias_method :short_locale?, :only_language?
 	end
 end
 
