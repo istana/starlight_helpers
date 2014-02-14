@@ -12,7 +12,7 @@ module StarlightHelpers
 		end
 
     # function parses user agent string from web browser (Accept-Language)
-    # and returns sorted array of {quality => code} segments
+    # and returns sorted array of {code => quality} segments
 		def parse_accept_language(ualangs)
 			# quality? format
 			qf = "q=(1|0\.[1-9])"
