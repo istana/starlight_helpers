@@ -1,3 +1,3 @@
 module StarlightHelpers
-  VERSION = "0.999"
+  VERSION = "0.1000"
 end
