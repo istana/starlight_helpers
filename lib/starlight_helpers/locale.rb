@@ -53,6 +53,10 @@ module StarlightHelpers
 		  loc.match(format)[3] != nil
 		end
 		alias_method :full_locale?, :country?
+		
+		def only_language?(loc)
+		  !full_locale?(loc)
+		end
 	end
 end
 

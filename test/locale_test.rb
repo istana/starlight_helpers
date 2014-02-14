@@ -16,7 +16,8 @@ describe StarlightHelpers::Locale do
     assert !Lester.valid_locale?('sks_SKs')
     assert !Lester.valid_locale?('0a_SK')
     assert !Lester.valid_locale?('0')
-    assert !Lester.valid_locale?('0_SK')    
+    assert !Lester.valid_locale?('0_SK')
+    assert !Lester.valid_locale?('sk_')    
   end
 
   it '#country?, #full_locale?' do
@@ -24,6 +25,11 @@ describe StarlightHelpers::Locale do
     assert !Lester.country?('sk')
     assert Lester.full_locale?('sk_SK')
     assert !Lester.full_locale?('sk')
+  end
+  
+  it 'only_language?' do
+    assert !Lester.only_language?('sk_SK')
+    assert Lester.only_language?('sk')
   end
 
   it '#country' do
