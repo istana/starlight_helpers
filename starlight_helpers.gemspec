@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "actionpack"
   spec.add_dependency "redcarpet"
+  spec.add_dependency "RedCloth"
   spec.add_dependency "rack"
   spec.add_dependency "actionview"
 
