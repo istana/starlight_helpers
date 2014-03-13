@@ -10,6 +10,8 @@ module StarlightHelpers
 		def format
 		  Regexp.new("\\A#{format_inline}\\z")
 		end
+		module_function :format, :format_inline
+		public :format, :format_inline
 
     # function parses user agent string from web browser (Accept-Language)
     # and returns sorted array of {code => quality} segments
