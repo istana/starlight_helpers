@@ -57,4 +57,10 @@ describe StarlightHelpers::Locale do
     assert_equal({}, Lester.parse_accept_language("sk;q=0"))
     assert_equal({}, Lester.parse_accept_language("I can has?"))
   end
+
+  it 'call #format and #inline directly' do
+    assert_equal Regexp, StarlightHelpers::Locale.format.class
+    assert_equal Regexp, StarlightHelpers::Locale.format_inline.class
+  end
+
 end
