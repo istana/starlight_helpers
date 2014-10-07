@@ -9,5 +9,10 @@ describe StarlightHelpers::Model do
     assert "cucoriedky-nase-rastu-v-lese",
       Lester.make_uri("Čučoriedky naše rastú v lese! \n")
   end
+
+	it '#make_uri with spec chars' do
+		assert "Čučoriedka++",
+			Lester.make_uri("cucoriedkaplusplus")
+	end
 end
  

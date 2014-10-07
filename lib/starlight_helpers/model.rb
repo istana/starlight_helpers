@@ -5,6 +5,7 @@ module StarlightHelpers
 	  # converts text to nice uri
 		def make_uri(string)
 			uri = ActiveSupport::Inflector.transliterate(string)
+			uri.gsub!("+", "plus")
 			uri.parameterize
 		end
 	end
